@@ -1,0 +1,275 @@
+
+/* Base Layout */
+
+
+.home {
+  position: relative;
+  min-height: 100vh;
+  background: #ffffff;
+  overflow: hidden;
+  font-family: "Inter", sans-serif;
+  color: #1a1b1c;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar,
+.hero,
+.side-left,
+.side-right,
+.description {
+  position: relative;
+  z-index: 2;
+}
+
+
+/* Top Navigation */
+
+
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+}
+
+.nav-left {
+  position: absolute;
+  top: 40px;
+  left: 50px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.logo {
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.intro {
+  color: #888;
+}
+
+.nav-right {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+}
+
+.enter-code {
+  background: black;
+  color: white;
+  border: none;
+  padding: 14px 18px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+
+/* HERO */
+
+.hero {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-inner {
+  width: 70%;
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+}
+
+.hero-title {
+  font-size: 128px;
+  line-height: 130px;
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  margin: 0;
+  text-align: center;
+}
+
+.line {
+  display: block;
+  transition: transform 1.1s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+/* LEFT HOVER */
+
+.home.hover-left .line-1 {
+  transform: translateX(25vw);
+}
+
+.home.hover-left .line-2 {
+  transform: translateX(32vw);
+}
+
+/* RIGHT HOVER */
+
+.home.hover-right .line-1 {
+  transform: translateX(-25vw);
+}
+
+.home.hover-right .line-2 {
+  transform: translateX(-32vw);
+}
+
+/* Side Controls */
+
+
+.side-left,
+.side-right {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.side-left {
+  left: 130px;
+}
+
+.side-right {
+  right: 130px;
+}
+
+.diamond {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #1a1b1c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(45deg);
+  transition: transform 0.4s ease;
+}
+
+.diamond-inner {
+  transform: rotate(-45deg);
+}
+
+.diamond-inner-left {
+  transform: rotate(-45deg) rotate(180deg);
+}
+
+.side-left:hover .diamond,
+.side-right:hover .diamond {
+  transform: rotate(45deg) scale(1.1);
+}
+
+
+/* Description */
+
+
+.description {
+  position: absolute;
+  bottom: 60px;
+  left: 40px;
+  max-width: 450px;
+  font-size: 18px;
+  text-transform: uppercase;
+  line-height: 24px;
+}
+
+
+/* Triangle Line Structure */
+
+
+.tri-left,
+.tri-right {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 57vw;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.tri-left {
+  left: 0;
+}
+
+.tri-right {
+  right: 0;
+}
+
+.tri-left .line,
+.tri-right .line {
+  position: absolute;
+  width: 60%;
+  height: 1px;
+  background: #dcdcdc;
+}
+
+/* LEFT TRIANGLE */
+
+.tri-left .tl {
+  top: 0;
+  left: 0;
+  transform-origin: left top;
+  transform: rotate(42deg);
+}
+
+.tri-left .bl {
+  bottom: 0;
+  left: 0;
+  transform-origin: left bottom;
+  transform: rotate(-42deg);
+}
+
+/* RIGHT TRIANGLE */
+
+.tri-right .tr {
+  top: 0;
+  right: 0;
+  transform-origin: right top;
+  transform: rotate(-42deg);
+}
+
+.tri-right .br {
+  bottom: 0;
+  right: 0;
+  transform-origin: right bottom;
+  transform: rotate(42deg);
+}
+
+
+/* Side Fade Logic */
+
+
+.side-left,
+.side-right,
+.tri-left,
+.tri-right {
+  transition: opacity 0.8s ease;
+}
+
+/* Hover LEFT → hide right */
+
+.home.hover-left .side-right,
+.home.hover-left .tri-right {
+  opacity: 0;
+  transform: translateX(40px);
+}
+
+/* Hover RIGHT → hide left */
+
+.home.hover-right .side-left,
+.home.hover-right .tri-left {
+  opacity: 0;
+  transform: translateX(-40px);
+}
+
+
+
+
+
+
