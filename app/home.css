@@ -131,6 +131,8 @@
   gap: 20px;
   font-size: 18px;
   cursor: pointer;
+  text-decoration: none;
+  color: black;
 }
 
 .side-left {

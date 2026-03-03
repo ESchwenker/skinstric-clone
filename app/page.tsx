@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import "./home.css";
+import Link from "next/link"
 
 export default function Home() {
   const [hoverSide, setHoverSide] = useState<"left" | "right" | null>(null);
@@ -51,16 +52,17 @@ export default function Home() {
       </div>
 
       {/* RIGHT SIDE */}
-      <div
-        className="side-right"
-        onMouseEnter={() => setHoverSide("right")}
-        onMouseLeave={() => setHoverSide(null)}
-      >
-        <span>TAKE TEST</span>
-        <div className="diamond">
-          <div className="diamond-inner">▶</div>
-        </div>
-      </div>
+        <Link
+          href="/testing"
+          className="side-right"
+          onMouseEnter={() => setHoverSide("right")}
+          onMouseLeave={() => setHoverSide(null)}
+        >
+          <span>TAKE TEST</span>
+          <div className="diamond">
+            <div className="diamond-inner">▶</div>
+          </div>
+        </Link>
 
       {/* DESCRIPTION */}
       <div className="description">

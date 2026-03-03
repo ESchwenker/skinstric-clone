@@ -1,0 +1,312 @@
+
+/* BASE */
+
+.results-page {
+  position: relative;
+  min-height: 100vh;
+  background: #ffffff;
+  font-family: "Inter", sans-serif;
+  color: #1a1b1c;
+  overflow: hidden;
+}
+
+/* NAVBAR */
+
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  z-index: 3;
+}
+
+.nav-left,
+.nav-left-bottom {
+  position: absolute;
+  left: 50px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.nav-left {
+  top: 40px;
+  cursor: pointer;
+}
+
+.nav-left-bottom {
+  top: 90px;
+  font-weight: 600;
+  cursor: default;
+}
+
+.logo {
+  margin-right: 20px;
+}
+
+.intro {
+  color: #888;
+}
+
+.nav-right {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+}
+
+.enter-code {
+  background: black;
+  color: white;
+  border: none;
+  padding: 14px 18px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* ANALYSIS TITLE */
+
+.analysis-title {
+  position: absolute;
+  top: 40px;
+  left: 50px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* MAIN OPTIONS */
+
+.analysis-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1100px;
+}
+
+.analysis-option {
+  position: relative;
+  width: 500px;
+  height: 200px;
+}
+
+.analysis-square {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  cursor: pointer;
+}
+
+.analysis-circle {
+  width: 160px;
+  height: 160px;
+  position: relative;
+  transition: transform 0.55s ease;
+}
+
+.analysis-option:hover .analysis-circle {
+  transform: scale(1.1);
+}
+
+.outer-circle {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.inner-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.shutter-icon {
+background-color: black;
+border-radius: 50%;
+padding: 4px;
+}
+
+
+.analysis-option {
+  position: relative;
+  width: 500px;
+}
+
+.analysis-square {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* CONNECTOR + TEXT SYSTEM */
+
+.analysis-option {
+  position: relative;
+  width: 400px;
+}
+
+/* Connector line */
+.connector {
+  position: absolute;
+  top: 80px; /* exact vertical center of 160px circle */
+  height: 1px;
+  background: #1a1b1c;
+  width: 160px;
+}
+
+/* LEFT SIDE */
+.analysis-option.left .analysis-square {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.analysis-option.left .connector {
+  position: absolute;
+  top: 40px; 
+  left: 150px; 
+  width: 120px;
+  height: 1px;
+  background: #1a1b1c;
+  transform: rotate(-35deg);
+  transform-origin: left center;
+}
+
+.analysis-option.left .analysis-text {
+  position: absolute;
+  top: -40px;
+  left: 270px;
+  width: 200px;
+  line-height: 30px;
+  font-size: 18px;
+  text-align: left;
+}
+
+/* RIGHT SIDE */
+.analysis-option.right .analysis-square {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.analysis-option.right .connector {
+  position: absolute;
+  top: 120px;
+  right: 150px;
+  width: 120px;
+  height: 1px;
+  background: #1a1b1c;
+  transform: rotate(-35deg);
+  transform-origin: right center;
+}
+
+.analysis-option.right .analysis-text {
+  position: absolute;
+  top: 180px;
+  right: 260px;
+  width: 200px;
+  line-height: 30px;
+  font-size: 18px;
+  text-align: right;
+}
+
+/* Dot */
+.dot {
+  position: absolute;
+  right: -4px;
+  top: -4px;
+  width: 8px;
+  height: 8px;
+  background: white;
+  border: 1px solid #1a1b1c;
+  border-radius: 50%;
+}
+
+/* Dot positioning */
+.analysis-option.left .dot {
+  right: -4px;
+}
+
+.analysis-option.right .dot {
+  left: -4px;
+}
+
+/* BACK BUTTON */
+
+.back-button {
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  z-index: 2;
+}
+
+.diamond {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #1a1b1c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(45deg);
+}
+
+.diamond-inner-left {
+  transform: rotate(-45deg) rotate(180deg);
+}
+
+/* Animated Background */
+
+.square-layer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 230px;
+  height: 230px;
+  border: 3px dotted #bbb;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}
+
+.results-layer-1 {
+  width: 280px;
+  height: 280px;
+  animation: rotateSlow 60s linear infinite;
+}
+
+.results-layer-2 {
+  width: 320px;
+  height: 320px;
+  animation: rotateReverse 80s linear infinite;
+  opacity: 0.5;
+}
+
+.results-layer-3 {
+  width: 360px;
+  height: 360px;
+  animation: rotateSlow 100s linear infinite;
+  opacity: 0.3;
+}
+
+
+@keyframes rotateSlow {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to   { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes rotateReverse {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to   { transform: translate(-50%, -50%) rotate(-360deg); }
+}
