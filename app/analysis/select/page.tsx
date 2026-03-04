@@ -3,9 +3,11 @@
 import Link from "next/link";
 import "./select.css";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function SelectPage() {
   const [analysis, setAnalysis] = useState<any>(null);
+  const router = useRouter();
 
   useEffect(() => {
     const stored = sessionStorage.getItem("analysis");
@@ -44,8 +46,11 @@ export default function SelectPage() {
 
         {/* diamonds */}
 
-        <div className="diamond top">
-          <span className="diamond-text">DEMOGRAPHICS</span>
+        <div
+        className="diamond top"
+        onClick={() => router.push("/demographics")}
+        >
+        <span className="diamond-text">DEMOGRAPHICS</span>
         </div>
 
         <div className="diamond left">
