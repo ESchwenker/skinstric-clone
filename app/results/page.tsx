@@ -3,8 +3,28 @@
 import Link from "next/link";
 import "./results.css";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export default function ResultsPage() {
+  const router = useRouter();
+
+  const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    console.log("file selected");
+
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+
+    reader.onloadend = () => {
+      sessionStorage.setItem("uploadedImage", reader.result as string);
+
+      router.push("/analysis/loading");
+    };
+
+    reader.readAsDataURL(file);
+  };
+
   return (
     <main className="results-page">
       {/* NAVBAR */}
@@ -25,26 +45,30 @@ export default function ResultsPage() {
 
       {/* MAIN CONTENT */}
       <div className="analysis-container">
+
+        {/* CAMERA OPTION (left) */}
         <div className="analysis-option left">
-            <div className="analysis-square">
+          <div className="analysis-square">
             <div className="square-layer results-layer-1"></div>
             <div className="square-layer results-layer-2"></div>
             <div className="square-layer results-layer-3"></div>
+
             <div className="analysis-circle">
-                <Image
+              <Image
                 src="/ellipse.png"
                 alt="outer circle"
                 width={160}
                 height={160}
                 className="outer-circle"
-                />
-                <Image
+              />
+
+              <Image
                 src="/shutter.png"
                 alt="shutter icon"
                 width={130}
                 height={130}
                 className="inner-icon shutter-icon"
-                />
+              />
             </div>
           </div>
 
@@ -59,27 +83,36 @@ export default function ResultsPage() {
           </div>
         </div>
 
-        {/* RIGHT OPTION */}
-        <div className="analysis-option right">
-            <div className="analysis-square">
+        {/* GALLERY OPTION (right) */}
+        <label className="analysis-option right">
+          <input
+            type="file"
+            accept="image/*"
+            onChange={handleImageUpload}
+            style={{ display: "none" }}
+          />
+
+          <div className="analysis-square">
             <div className="square-layer results-layer-1"></div>
             <div className="square-layer results-layer-2"></div>
             <div className="square-layer results-layer-3"></div>
+
             <div className="analysis-circle">
-                <Image
+              <Image
                 src="/ellipse.png"
                 alt="outer circle"
                 width={160}
                 height={160}
                 className="outer-circle"
-                />
-                <Image
+              />
+
+              <Image
                 src="/gallery.png"
                 alt="gallery icon"
                 width={135}
                 height={135}
                 className="inner-icon"
-                />
+              />
             </div>
           </div>
 
@@ -92,7 +125,8 @@ export default function ResultsPage() {
             <br />
             ACCESS GALLERY
           </div>
-        </div>
+        </label>
+
       </div>
 
       {/* BACK BUTTON */}
@@ -102,8 +136,6 @@ export default function ResultsPage() {
         </div>
         <span>BACK</span>
       </Link>
-
-      {/* Background diamonds */}
     </main>
   );
 }
