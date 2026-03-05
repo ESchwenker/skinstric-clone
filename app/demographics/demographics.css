@@ -138,8 +138,8 @@ h3 {
 
 .circle-chart {
   position: relative;
-  width: 260px;
-  height: 260px;
+  width: 440px;
+  height: 440px;
   position: absolute;
   right: 80px;
   top: 50%;
@@ -180,6 +180,7 @@ h3 {
   justify-content: space-between;
   padding: 14px 0;
   border-bottom: 1px solid #ddd;
+  cursor: pointer;
 }
 
 .confidence-item.active {

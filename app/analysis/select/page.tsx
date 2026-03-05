@@ -77,7 +77,7 @@ export default function SelectPage() {
         <span>BACK</span>
       </Link>
 
-      <Link href="/analysis/summary" className="summary-button">
+      <Link href="/demographics" className="summary-button">
         <span>GET SUMMARY</span>
         <div className="summary-diamond">
           <div className="loading-diamond-inner-right">▶</div>

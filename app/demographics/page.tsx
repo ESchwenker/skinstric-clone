@@ -7,6 +7,7 @@ import Link from "next/link";
 export default function DemographicsPage() {
   const [data, setData] = useState<any>(null);
   const [activeCard, setActiveCard] = useState("race");
+  const [selectedLabel, setSelectedLabel] = useState<string | null>(null);
 
   useEffect(() => {
     async function fetchResults() {
@@ -71,25 +72,7 @@ export default function DemographicsPage() {
     );
   }
 
-  let centerTitle = "";
-  let centerValue = "";
-
-  if (activeCard === "race") {
-    centerTitle = data.race;
-    centerValue = data.confidence;
-  }
-
-  if (activeCard === "age") {
-    centerTitle = data.age;
-    centerValue = data.ageConfidence || data.confidence;
-  }
-
-  if (activeCard === "sex") {
-    centerTitle = data.gender;
-    centerValue = data.genderConfidence || data.confidence;
-  }
-
-  let predictions: any = {};
+    let predictions: any = {};
 
   if (activeCard === "race") {
     predictions = data.racePredictions;
@@ -101,6 +84,29 @@ export default function DemographicsPage() {
 
   if (activeCard === "sex") {
     predictions = data.genderPredictions;
+  }
+
+  let centerTitle = "";
+  let centerValue = 0;
+
+  if (selectedLabel) {
+    centerTitle = selectedLabel;
+    centerValue = Math.round(predictions[selectedLabel] * 100);
+  } else {
+    if (activeCard === "race") {
+      centerTitle = data.race;
+      centerValue = data.confidence;
+    }
+
+    if (activeCard === "age") {
+      centerTitle = data.age;
+      centerValue = data.ageConfidence;
+    }
+
+    if (activeCard === "sex") {
+      centerTitle = data.gender;
+      centerValue = data.genderConfidence;
+    }
   }
 
   let confidence = 0;
@@ -148,7 +154,10 @@ export default function DemographicsPage() {
         <div className="left-panel">
           <div
             className={`info-card ${activeCard === "race" ? "active" : ""}`}
-            onClick={() => setActiveCard("race")}
+            onClick={() => {
+              setActiveCard("race");
+              setSelectedLabel(null);
+            }}
           >
             <h3>{data.race}</h3>
             <span>RACE</span>
@@ -156,7 +165,10 @@ export default function DemographicsPage() {
 
           <div
             className={`info-card ${activeCard === "age" ? "active" : ""}`}
-            onClick={() => setActiveCard("age")}
+            onClick={() => {
+              setActiveCard("age");
+              setSelectedLabel(null);
+            }}
           >
             <h3>{data.age}</h3>
             <span>AGE</span>
@@ -164,7 +176,10 @@ export default function DemographicsPage() {
 
           <div
             className={`info-card ${activeCard === "sex" ? "active" : ""}`}
-            onClick={() => setActiveCard("sex")}
+            onClick={() => {
+              setActiveCard("sex");
+              setSelectedLabel(null);
+            }}
           >
             <h3>{data.gender}</h3>
             <span>SEX</span>
@@ -177,12 +192,12 @@ export default function DemographicsPage() {
           <h2 className="center-title">{centerTitle}</h2>
 
           <div className="circle-chart">
-            <svg width="260" height="260" viewBox="0 0 260 260">
+            <svg width="440" height="440" viewBox="0 0 440 440">
               {/* background circle */}
               <circle
-                cx="130"
-                cy="130"
-                r="110"
+                cx="220"
+                cy="220"
+                r="190"
                 stroke="#d9d9d9"
                 strokeWidth="8"
                 fill="none"
@@ -191,20 +206,20 @@ export default function DemographicsPage() {
               {/* progress ring */}
               <circle
                 className="progress-ring"
-                cx="130"
-                cy="130"
-                r="110"
+                cx="220"
+                cy="220"
+                r="190"
                 stroke="#111"
                 strokeWidth="8"
                 fill="none"
-                strokeDasharray={2 * Math.PI * 110}
-                strokeDashoffset={2 * Math.PI * 110 * (1 - confidence / 100)}
+                strokeDasharray={2 * Math.PI * 190}
+                strokeDashoffset={2 * Math.PI * 190 * (1 - centerValue / 100)}
                 strokeLinecap="round"
-                transform="rotate(-90 130 130)"
+                transform="rotate(-90 220 220)"
               />
             </svg>
 
-            <div className="circle-text">{confidence}%</div>
+            <div className="circle-text">{centerValue}%</div>
           </div>
         </div>
 
@@ -223,10 +238,9 @@ export default function DemographicsPage() {
                 <div
                   key={i}
                   className={`confidence-item ${
-                    label === data[activeCard === "sex" ? "gender" : activeCard]
-                      ? "active"
-                      : ""
+                    label === centerTitle ? "active" : ""
                   }`}
+                  onClick={() => setSelectedLabel(label)}
                 >
                   <span className="confidence-label">{label}</span>
                   <span>{Math.round(value * 100)}%</span>
@@ -249,7 +263,7 @@ export default function DemographicsPage() {
         <span>BACK</span>
       </Link>
 
-      <Link href="/analysis/home" className="home-button">
+      <Link href="/" className="home-button">
         <span>HOME</span>
         <div className="home-diamond">
           <div className="demographics-diamond-inner-right">▶</div>
