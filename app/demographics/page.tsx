@@ -66,13 +66,16 @@ export default function DemographicsPage() {
 
   if (!data) {
     return (
-      <main className="demographics-page">
-        <div className="loading">Analyzing demographics...</div>
+      <main className="demographics-page loading-screen">
+        <div className="loader-container">
+          <div className="loader-ring"></div>
+          <p className="loader-text">Analyzing demographics...</p>
+        </div>
       </main>
     );
   }
 
-    let predictions: any = {};
+  let predictions: any = {};
 
   if (activeCard === "race") {
     predictions = data.racePredictions;
@@ -263,12 +266,12 @@ export default function DemographicsPage() {
         <span>BACK</span>
       </Link>
 
-      <Link href="/" className="home-button">
+      <a href="/" className="home-button">
         <span>HOME</span>
         <div className="home-diamond">
           <div className="demographics-diamond-inner-right">▶</div>
         </div>
-      </Link>
+      </a>
     </main>
   );
 }

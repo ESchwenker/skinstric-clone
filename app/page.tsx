@@ -1,10 +1,25 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import "./home.css";
 import Link from "next/link"
 
 export default function Home() {
+
+const pathname = usePathname();
+const [loaded, setLoaded] = useState(false);
+
+useEffect(() => {
+  setLoaded(false);
+
+  const timer = setTimeout(() => {
+    setLoaded(true);
+  }, 50);
+
+  return () => clearTimeout(timer);
+}, [pathname]);
+
   const [hoverSide, setHoverSide] = useState<"left" | "right" | null>(null);
 
   return (
@@ -32,7 +47,7 @@ export default function Home() {
       {/* HERO */}
       <div className="hero">
         <div className="hero-inner">
-          <h1 className="hero-title">
+          <h1 className={`hero-title ${loaded ? "animate" : ""}`}>
             <span className="line line-1">Sophisticated</span>
             <span className="line line-2">skincare</span>
           </h1>

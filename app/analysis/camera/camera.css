@@ -1,0 +1,225 @@
+.camera-page {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  font-family: "Inter", sans-serif;
+}
+
+/* CAMERA FEED */
+
+.camera-feed {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* NAVBAR */
+
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  z-index: 3;
+  background-color: white;
+}
+
+.nav-left,
+.nav-left-bottom {
+  position: absolute;
+  left: 50px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.nav-left {
+  top: 40px;
+  cursor: pointer;
+}
+
+.nav-left-bottom {
+  top: 90px;
+  font-weight: 600;
+  cursor: default;
+}
+
+.logo {
+  margin-right: 20px;
+}
+
+.intro {
+  color: #888;
+}
+
+.nav-right {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+}
+
+.enter-code {
+  background: black;
+  color: white;
+  border: none;
+  padding: 14px 18px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* CENTER GUIDE */
+
+.camera-guide {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+}
+
+.tips-title {
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+.tips-list {
+  display: flex;
+  gap: 28px;
+  justify-content: center;
+  font-size: 14px;
+}
+
+/* CAPTURE BUTTON */
+
+.capture-ui {
+  position: absolute;
+  right: 80px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: white;
+}
+
+.capture-button {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 2px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 500ms ease;
+}
+
+.camera-icon {
+  width: 80px;
+  height: 80px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.capture-button:hover {
+    transform: scale(1.1);
+}
+
+/* PICTURE TAKEN */
+
+.hidden {
+  display: none;
+}
+
+.preview-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.preview-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.great-shot {
+  position: absolute;
+  top: 50%;
+  font-weight: 300;
+}
+
+.preview-title {
+  position: absolute;
+  top: 75%;
+  font-size: 22px;
+}
+
+.preview-buttons {
+  position: absolute;
+  bottom: 80px;
+  display: flex;
+  gap: 40px;
+}
+
+.retake {
+  padding: 12px 20px;
+  background: rgb(233, 231, 231);
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+}
+
+.use-photo {
+  padding: 12px 20px;
+  background: rgb(29, 29, 29);
+  color: white;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+}
+
+/* BACK BUTTON */
+
+.camera-back-button {
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  text-decoration: none;
+  color:white;
+  font-size: 18px;
+  z-index: 2;
+}
+
+.camera-diamond {
+  width: 50px;
+  height: 50px;
+  border: 1px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(45deg);
+}
+
+.camera-diamond-inner-left {
+  transform: rotate(-45deg) rotate(180deg);
+}
+
+.camera-back-button:hover .camera-diamond {
+  transform: rotate(45deg) scale(1.1);
+}

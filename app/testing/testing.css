@@ -237,15 +237,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transform: rotate(-45deg);
-}
-
-.diamond-inner-right {
   transform: rotate(45deg);
 }
 
+.diamond-inner-right {
+  transform: rotate(-45deg);
+}
+
 .proceed-button:hover .proceed-diamond {
-  transform: rotate(-45deg) scale(1.1);
+  transform: rotate(45deg) scale(1.1);
 }
 
 /* Animated Diamond Background */

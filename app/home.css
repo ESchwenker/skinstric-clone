@@ -91,7 +91,9 @@
   letter-spacing: -0.04em;
   margin: 0;
   text-align: center;
-  opacity: 0;
+}
+
+.hero-title.animate {
   animation: fadeInHero 5s ease forwards;
 }
 
@@ -99,7 +101,6 @@
   from {
     opacity: 0;
   }
-
   to {
     opacity: 1;
   }
