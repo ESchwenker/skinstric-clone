@@ -12,9 +12,14 @@ export default function DemographicsPage() {
   useEffect(() => {
     async function fetchResults() {
       try {
-        const image = sessionStorage.getItem("uploadedImage");
+        const image =
+          sessionStorage.getItem("capturedPhoto") ||
+          sessionStorage.getItem("uploadedImage");
 
-        if (!image) return;
+        if (!image) {
+          console.error("No image found in sessionStorage");
+          return;
+        }
 
         const res = await fetch(
           "https://us-central1-frontend-simplified.cloudfunctions.net/skinstricPhaseTwo",

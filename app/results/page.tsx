@@ -56,7 +56,7 @@ export default function ResultsPage() {
 
               <button
                 className="allow-button"
-                onClick={() => router.push("/analysis/camera-loading")}
+                onClick={() => window.location.href = "/analysis/camera-loading"}
               >
                 ALLOW
               </button>

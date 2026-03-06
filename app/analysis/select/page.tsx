@@ -6,17 +6,19 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
 export default function SelectPage() {
-  const [analysis, setAnalysis] = useState<any>(null);
-  const router = useRouter();
+const [photo, setPhoto] = useState<string | null>(null);
+const router = useRouter();
 
   useEffect(() => {
-    const stored = sessionStorage.getItem("analysis");
-    if (stored) {
-      setAnalysis(JSON.parse(stored));
+    const captured = sessionStorage.getItem("capturedPhoto");
+    const uploaded = sessionStorage.getItem("uploadedImage");
+
+    if (captured) {
+      setPhoto(captured);
+    } else if (uploaded) {
+      setPhoto(uploaded);
     }
   }, []);
-
-  if (!analysis) return null;
 
   return (
     <main className="select-page">

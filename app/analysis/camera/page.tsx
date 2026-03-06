@@ -3,13 +3,14 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import "./camera.css";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function CameraPage() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   const [photo, setPhoto] = useState<string | null>(null);
+  const router = useRouter();
 
   useEffect(() => {
     const startCamera = async () => {
@@ -56,14 +57,13 @@ export default function CameraPage() {
 
     sessionStorage.setItem("capturedPhoto", photo);
 
-    // router.push("/analysis/loading");
+    router.push("/analysis/select");
   };
 
   return (
     <main className="camera-page">
-
       {/* NAVBAR */}
-      <div className="navbar">
+      <div className="navbar-camera">
         <div className="nav-left">
           <span className="logo">SKINSTRIC</span>
           <span className="intro">[ INTRO ]</span>
@@ -84,9 +84,7 @@ export default function CameraPage() {
       />
 
       {/* PREVIEW IMAGE */}
-      {photo && (
-        <img src={photo} className="preview-image" />
-      )}
+      {photo && <img src={photo} className="preview-image" />}
 
       {/* CAMERA MODE UI */}
       {!photo && (
@@ -143,13 +141,12 @@ export default function CameraPage() {
       <canvas ref={canvasRef} style={{ display: "none" }} />
 
       {/* BACK BUTTON */}
-      <Link href="/results" className="camera-back-button">
+        <a href="/results" className="camera-back-button">
         <div className="camera-diamond">
-          <div className="camera-diamond-inner-left">▶</div>
+            <div className="camera-diamond-inner-left">▶</div>
         </div>
         <span>BACK</span>
-      </Link>
-
+        </a>
     </main>
   );
 }
