@@ -296,3 +296,103 @@
 .loading-back-button:hover .loading-diamond {
   transform: rotate(45deg) scale(1.1);
 }
+
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+
+  .nav-left,
+  .nav-left-bottom {
+    left: 25px;
+    font-size: 14px;
+  }
+
+  .analysis {
+    font-size: 16px;
+  }
+
+  .estimation {
+    font-size: 15px;
+    line-height: 26px;
+  }
+
+  .diamond-section {
+    width: 420px;
+    height: 420px;
+    top: 58%;
+  }
+
+  .outer-diamond {
+    width: 360px;
+    height: 360px;
+  }
+
+  .diamond {
+    width: 150px;
+    height: 150px;
+  }
+
+  .diamond-text {
+    font-size: 16px;
+  }
+
+  .diamond.top {
+    top: 20px;
+  }
+
+  .diamond.bottom {
+    bottom: 20px;
+  }
+
+  .diamond.left {
+    left: 20px;
+  }
+
+  .diamond.right {
+    right: 20px;
+  }
+
+.loading-back-button,
+.summary-button {
+  bottom: 35px;
+  font-size: 14px;
+  gap: 14px;
+}
+
+.loading-diamond,
+.summary-diamond {
+  width: 36px;
+  height: 36px;
+}
+
+/* SMALLER OUTER DOTTED DIAMOND */
+
+.outer-diamond {
+  width: 360px;
+  height: 360px;
+}
+
+/* HOVER EXPANSION (SCALED DOWN) */
+
+.diamond-section:has(.diamond.top:hover) .outer-diamond {
+  width: 400px;
+  height: 400px;
+}
+
+.diamond-section:has(.diamond.left:hover) .outer-diamond {
+  width: 450px;
+  height: 450px;
+}
+
+.diamond-section:has(.diamond.right:hover) .outer-diamond {
+  width: 450px;
+  height: 450px;
+}
+
+.diamond-section:has(.diamond.bottom:hover) .outer-diamond {
+  width: 500px;
+  height: 500px;
+}
+
+}

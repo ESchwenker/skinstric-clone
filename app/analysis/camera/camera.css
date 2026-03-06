@@ -223,3 +223,167 @@
 .camera-back-button:hover .camera-diamond {
   transform: rotate(45deg) scale(1.1);
 }
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 768px) {
+
+  .navbar-camera {
+    height: 80px;
+  }
+
+  .nav-left {
+    top: 28px;
+    left: 30px;
+    font-size: 14px;
+  }
+
+  .nav-left-bottom {
+    top: 70px;
+    left: 30px;
+    font-size: 14px;
+  }
+
+  .nav-right {
+    right: 25px;
+    top: 18px;
+  }
+
+  .enter-code {
+    padding: 10px 14px;
+    font-size: 11px;
+  }
+
+  .camera-guide {
+    top: 88%;
+  }
+
+  .tips-title {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .tips-list {
+    font-size: 12px;
+    gap: 20px;
+  }
+
+  .capture-ui {
+    right: 40px;
+  }
+
+  .capture-button {
+    width: 70px;
+    height: 70px;
+  }
+
+  .camera-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .camera-back-button {
+    bottom: 35px;
+    left: 30px;
+    font-size: 14px;
+    gap: 18px;
+  }
+
+  .camera-diamond {
+    width: 36px;
+    height: 36px;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .navbar-camera {
+    height: 70px;
+  }
+
+  .nav-left {
+    top: 22px;
+    left: 20px;
+    font-size: 13px;
+  }
+
+  .nav-left-bottom {
+    top: 58px;
+    left: 20px;
+    font-size: 13px;
+  }
+
+  .nav-right {
+    right: 15px;
+    top: 16px;
+  }
+
+  .enter-code {
+    padding: 8px 12px;
+    font-size: 10px;
+  }
+
+  .camera-guide {
+    top: 86%;
+  }
+
+  .tips-title {
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+
+  .tips-list {
+    flex-direction: column;
+    gap: 6px;
+    font-size: 11px;
+  }
+
+ .capture-ui {
+  position: absolute;
+  right: 20px;
+  top: 20%;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: white;
+}
+
+  .capture-button {
+    width: 60px;
+    height: 60px;
+  }
+
+  .camera-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .camera-back-button {
+    bottom: 25px;
+    left: 20px;
+    font-size: 12px;
+    gap: 12px;
+  }
+
+  .camera-diamond {
+    width: 30px;
+    height: 30px;
+  }
+
+  .preview-title {
+    font-size: 18px;
+  }
+
+  .preview-buttons {
+    bottom: 50px;
+    gap: 20px;
+  }
+
+  .retake,
+  .use-photo {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+
+}
