@@ -354,3 +354,120 @@ padding: 4px;
   color: white;
   cursor: pointer;
 }
+
+/* RESPONSIVENESS */
+
+@media (max-width: 1200px) {
+
+  .analysis-container {
+    max-width: 750px;
+    gap: 60px;
+  }
+
+  .analysis-option {
+    width: 340px;
+  }
+
+  /* LEFT SIDE */
+  .analysis-option.left .analysis-text {
+    left: 220px;
+    font-size: 16px;
+    line-height: 26px;
+    width: 180px;
+  }
+
+  .analysis-option.left .connector {
+    left: 140px;
+    width: 100px;
+  }
+
+  /* RIGHT SIDE */
+  .analysis-option.right .analysis-text {
+    right: 210px;
+    font-size: 16px;
+    line-height: 26px;
+    width: 180px;
+  }
+
+  .analysis-option.right .connector {
+    right: 140px;
+    width: 100px;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .analysis-container {
+    position: absolute;
+    top: 58%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 90px;
+    width: 100%;
+  }
+
+  .analysis-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 260px;
+    position: relative;
+  }
+
+  .analysis-option.left .analysis-square,
+  .analysis-option.right .analysis-square {
+    position: relative !important;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+  }
+
+  .analysis-option.left .analysis-text,
+  .analysis-option.right .analysis-text {
+    position: relative !important;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    transform: none !important;
+    text-align: center !important;
+  }
+
+  .connector,
+  .dot {
+    display: none;
+  }
+
+  .analysis-text {
+    width: 220px;
+    margin-top: 40px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 20px;
+  }
+
+  .square-layer {
+    width: 160px;
+    height: 160px;
+  }
+
+  .results-layer-1 {
+    width: 180px;
+    height: 180px;
+  }
+
+  .results-layer-2 {
+    width: 210px;
+    height: 210px;
+  }
+
+  .results-layer-3 {
+    width: 240px;
+    height: 240px;
+  }
+
+}

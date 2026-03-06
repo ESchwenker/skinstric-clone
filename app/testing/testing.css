@@ -309,3 +309,108 @@
   }
 }
 
+/* RESPONSIVE */
+
+
+@media (max-width: 768px) {
+
+  .input-wrapper {
+    width: 90vw;
+    max-width: 90vw;
+  }
+
+  .testing-input {
+    font-size: 48px;
+  }
+
+    .input-wrapper {
+    width: 70vw;
+    max-width: 500px;
+  }
+
+  .click-label {
+    font-size: 14px;
+  }
+
+  .back-button {
+    left: 25px;
+    bottom: 35px;
+    font-size: 16px;
+  }
+
+  .proceed-button {
+    right: 25px;
+    bottom: 35px;
+    font-size: 16px;
+  }
+
+  .diamond,
+  .proceed-diamond {
+    width: 40px;
+    height: 40px;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .testing-center {
+    width: 90%;
+  }
+
+  .click-label {
+    font-size: 12px;
+    letter-spacing: 0.5px;
+  }
+
+  .testing-input {
+    font-size: 34px;
+  }
+
+  .input-wrapper {
+    width: 85vw;
+    max-width: 320px;
+  }
+
+  .enter-code {
+    padding: 10px 14px;
+    font-size: 10px;
+  }
+
+  .back-button {
+    left: 18px;
+    bottom: 25px;
+    font-size: 14px;
+    gap: 15px;
+  }
+
+  .proceed-button {
+    right: 18px;
+    bottom: 25px;
+    font-size: 14px;
+    gap: 15px;
+  }
+
+  .diamond,
+  .proceed-diamond {
+    width: 32px;
+    height: 32px;
+  }
+
+  .layer-1 {
+    width: 55vw;
+    height: 55vw;
+  }
+
+  .layer-2 {
+    width: 60vw;
+    height: 60vw;
+  }
+
+  .layer-3 {
+    width: 65vw;
+    height: 65vw;
+  }
+
+}
+
