@@ -1,6 +1,4 @@
-
 /* Base Layout */
-
 
 .home {
   position: relative;
@@ -9,7 +7,6 @@
   overflow: hidden;
   font-family: "Inter", sans-serif;
   color: #1a1b1c;
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24,9 +21,7 @@
   z-index: 2;
 }
 
-
 /* Top Navigation */
-
 
 .navbar {
   position: absolute;
@@ -67,7 +62,6 @@
   font-size: 12px;
   font-weight: bold;
 }
-
 
 /* HERO */
 
@@ -133,7 +127,6 @@
 
 /* Side Controls */
 
-
 .side-left,
 .side-right {
   position: absolute;
@@ -180,9 +173,7 @@
   transform: rotate(45deg) scale(1.1);
 }
 
-
 /* Description */
-
 
 .description {
   position: absolute;
@@ -194,9 +185,7 @@
   line-height: 24px;
 }
 
-
 /* Triangle Line Structure */
-
 
 .tri-left,
 .tri-right {
@@ -256,9 +245,7 @@
   transform: rotate(42deg);
 }
 
-
 /* Side Fade Logic */
-
 
 .side-left,
 .side-right,
@@ -283,8 +270,179 @@
   transform: translateX(-40px);
 }
 
+.enter-experience {
+  display: none;
+}
 
+/* RESPONSIVE */
 
+@media (max-width: 1200px) {
 
+  /* Hide side navigation */
 
+  .side-left,
+  .side-right,
+  .tri-left,
+  .tri-right {
+    display: none;
+    z-index: 0;
+  }
 
+ .hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 120px 0;
+  overflow: visible;
+}
+
+  .hero-inner {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    z-index: 100;
+  }
+
+  .hero-title {
+    font-size: 75px;
+    line-height: 75px;
+  }
+
+  .diamond {
+    width: 34px;
+    height: 34px;
+  }
+
+  .description {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    max-width: 400px;
+    color: #888;
+    text-transform: none;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.8;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .enter-experience {
+    display: inline-flex;
+    justify-content: center;
+    position: relative;
+    z-index: 5;
+    align-items: center;
+    gap: 14px;
+    margin-top: 145px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+
+  .enter-experience:hover {
+    transform: scale(1.1);
+  }
+
+ .diamond-frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 580px;
+  height: 580px;
+  border: 1px solid #dcdcdc;
+  transform: translate(-50%, -50%) rotate(45deg);
+  z-index: 0;
+}
+
+  .diamond-frame::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 480px;
+    height: 480px;
+    border: 1px solid #dcdcdc;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media (max-width: 768px) {
+
+  .hero-title {
+    font-size: 52px;
+    line-height: 54px;
+  }
+
+  .description {
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 320px;
+  }
+
+  .enter-experience {
+    margin-top: 80px;
+    font-size: 14px;
+    gap: 10px;
+  }
+
+  .diamond {
+    width: 28px;
+    height: 28px;
+  }
+
+  .diamond-frame {
+    width: 420px;
+    height: 420px;
+  }
+
+  .diamond-frame::after {
+    width: 340px;
+    height: 340px;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .hero-title {
+    font-size: 40px;
+    line-height: 42px;
+  }
+
+  .description {
+    font-size: 14px;
+    line-height: 1.5;
+    max-width: 260px;
+  }
+
+  .enter-experience {
+    margin-top: 100px;
+    font-size: 13px;
+    gap: 8px;
+  }
+
+  .diamond {
+    width: 24px;
+    height: 24px;
+  }
+
+  .diamond-frame {
+    width: 320px;
+    height: 320px;
+  }
+
+  .diamond-frame::after {
+    width: 250px;
+    height: 250px;
+  }
+
+}
