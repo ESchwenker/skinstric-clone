@@ -5,7 +5,19 @@ import "./demographics.css";
 import Link from "next/link";
 
 export default function DemographicsPage() {
-  const [data, setData] = useState<any>(null);
+    type DemographicData = {
+    race: string;
+    age: string;
+    gender: string;
+    confidence: number;
+    ageConfidence: number;
+    genderConfidence: number;
+    racePredictions: Record<string, number>;
+    agePredictions: Record<string, number>;
+    genderPredictions: Record<string, number>;
+  };
+
+  const [data, setData] = useState<DemographicData | null>(null);
   const [activeCard, setActiveCard] = useState("race");
   const [selectedLabel, setSelectedLabel] = useState<string | null>(null);
 
@@ -40,8 +52,8 @@ export default function DemographicsPage() {
 
         const { race, age, gender } = result.data;
 
-        const getTopPrediction = (obj: any) => {
-          return Object.entries(obj).sort((a: any, b: any) => b[1] - a[1])[0];
+        const getTopPrediction = (obj: Record<string, number>) => {
+          return Object.entries(obj).sort((a, b) => b[1] - a[1])[0];
         };
 
         const [topRace, raceConfidence] = getTopPrediction(race);
