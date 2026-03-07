@@ -97,16 +97,14 @@ export default function ResultsPage() {
                 <Image
                   src="/ellipse.png"
                   alt="outer circle"
-                  width={160}
-                  height={160}
+                  fill
                   className="outer-circle"
                 />
 
                 <Image
                   src="/shutter.png"
                   alt="shutter icon"
-                  width={130}
-                  height={130}
+                  fill
                   className="inner-icon shutter-icon"
                 />
               </div>
@@ -141,16 +139,14 @@ export default function ResultsPage() {
                 <Image
                   src="/ellipse.png"
                   alt="outer circle"
-                  width={160}
-                  height={160}
+                  fill
                   className="outer-circle"
                 />
 
                 <Image
                   src="/gallery.png"
                   alt="gallery icon"
-                  width={135}
-                  height={135}
+                  fill
                   className="inner-icon"
                 />
               </div>

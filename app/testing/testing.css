@@ -25,7 +25,7 @@
 .nav-left-bottom {
   position: absolute;
   left: 50px;
-  font-size: 16px;
+  font-size: 12px;
   font-weight: 500;
 }
 
@@ -59,7 +59,7 @@
   color: white;
   border: none;
   padding: 14px 18px;
-  font-size: 12px;
+  font-size: 8px;
   font-weight: bold;
 }
 
@@ -75,7 +75,7 @@
 }
 
 .click-label {
-  font-size: 18px;
+  font-size: 14px;
   letter-spacing: 1px;
   color: #8a94a6;
   margin-bottom: 4px;
@@ -94,7 +94,7 @@
 
 .input-wrapper {
   position: relative;
-  width: 600px;
+  width: 450px;
   max-width: 80vw;
   margin: 0 auto;
 }
@@ -111,7 +111,7 @@
 
 .testing-input {
   width: 100%;
-  font-size: 75px;
+  font-size: 55px;
   font-weight: 400;
   letter-spacing: -0.06em;
   border: none;
@@ -172,13 +172,13 @@
 /* COMPLETE SCREEN */
 
 .complete-screen h1 {
-  font-size: 34px;
+  font-size: 30px;
   font-weight: 400;
   margin-bottom: 15px;
 }
 
 .complete-screen p {
-  font-size: 22px;
+  font-size: 18px;
   color: #5f6c7b;
 }
 
@@ -193,7 +193,7 @@
   gap: 30px;
   text-decoration: none;
   color: black;
-  font-size: 18px;
+  font-size: 14px;
   z-index: 2;
 }
 
@@ -205,6 +205,7 @@
   align-items: center;
   justify-content: center;
   transform: rotate(45deg);
+  transition: all 600ms ease;
 }
 
 .diamond:hover {
@@ -224,7 +225,7 @@
   display: flex;
   align-items: center;
   gap: 30px;
-  font-size: 18px;
+  font-size: 14px;
   color: black;
   cursor: pointer;
   z-index: 2;
@@ -335,7 +336,6 @@
   .back-button {
     left: 25px;
     bottom: 35px;
-    font-size: 16px;
   }
 
   .proceed-button {

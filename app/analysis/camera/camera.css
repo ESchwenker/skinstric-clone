@@ -22,7 +22,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100px;
+  height: 90px;
   z-index: 3;
   background-color: white;
 }
@@ -31,7 +31,7 @@
 .nav-left-bottom {
   position: absolute;
   left: 50px;
-  font-size: 16px;
+  font-size: 12px;
   font-weight: 500;
 }
 
@@ -65,7 +65,7 @@
   color: white;
   border: none;
   padding: 14px 18px;
-  font-size: 12px;
+  font-size: 8px;
   font-weight: bold;
 }
 
@@ -81,7 +81,7 @@
 }
 
 .tips-title {
-  font-size: 16px;
+  font-size: 12px;
   margin-bottom: 12px;
 }
 
@@ -89,15 +89,15 @@
   display: flex;
   gap: 28px;
   justify-content: center;
-  font-size: 14px;
+  font-size: 10px;
 }
 
 /* CAPTURE BUTTON */
 
 .capture-ui {
   position: absolute;
-  right: 80px;
-  top: 50%;
+  right: 40px;
+  top: 60%;
   transform: translateY(-50%);
   display: flex;
   align-items: center;
@@ -106,8 +106,8 @@
 }
 
 .capture-button {
-  width: 90px;
-  height: 90px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
   border: 2px solid white;
   display: flex;
@@ -118,8 +118,8 @@
 }
 
 .camera-icon {
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   background: white;
   border-radius: 50%;
   display: flex;
@@ -164,20 +164,20 @@
 .preview-title {
   position: absolute;
   top: 75%;
-  font-size: 22px;
+  font-size: 18px;
 }
 
 .preview-buttons {
   position: absolute;
-  bottom: 80px;
+  bottom: 50px;
   display: flex;
-  gap: 40px;
+  gap: 30px;
 }
 
 .retake {
   padding: 12px 20px;
   background: rgb(233, 231, 231);
-  font-size: 18px;
+  font-size: 14px;
   border: none;
   cursor: pointer;
 }
@@ -186,7 +186,7 @@
   padding: 12px 20px;
   background: rgb(29, 29, 29);
   color: white;
-  font-size: 18px;
+  font-size: 14px;
   border: none;
   cursor: pointer;
 }
@@ -202,7 +202,7 @@
   gap: 30px;
   text-decoration: none;
   color:white;
-  font-size: 18px;
+  font-size: 14px;
   z-index: 2;
 }
 
@@ -214,6 +214,7 @@
   align-items: center;
   justify-content: center;
   transform: rotate(45deg);
+  transition: all 600ms ease;
 }
 
 .camera-diamond-inner-left {
@@ -258,33 +259,29 @@
     top: 88%;
   }
 
-  .tips-title {
-    font-size: 14px;
-    margin-bottom: 10px;
-  }
-
-  .tips-list {
-    font-size: 12px;
-    gap: 20px;
-  }
-
   .capture-ui {
-    right: 40px;
+    position: absolute;
+    right: 20px;
+    top: 20%;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    color: white;
   }
 
   .capture-button {
-    width: 70px;
-    height: 70px;
-  }
-
-  .camera-icon {
     width: 60px;
     height: 60px;
   }
 
+  .camera-icon {
+    width: 50px;
+    height: 50px;
+  }
+
   .camera-back-button {
-    bottom: 35px;
-    left: 30px;
+    bottom: 25px;
+    left: 20px;
     font-size: 14px;
     gap: 18px;
   }
@@ -292,6 +289,12 @@
   .camera-diamond {
     width: 36px;
     height: 36px;
+  }
+
+  .tips-list {
+    flex-direction: column;
+    gap: 6px;
+    font-size: 10px;
   }
 
 }
@@ -329,34 +332,12 @@
   }
 
   .tips-title {
-    font-size: 12px;
+    font-size: 10px;
     margin-bottom: 8px;
   }
 
   .tips-list {
-    flex-direction: column;
-    gap: 6px;
-    font-size: 11px;
-  }
-
- .capture-ui {
-  position: absolute;
-  right: 20px;
-  top: 20%;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  color: white;
-}
-
-  .capture-button {
-    width: 60px;
-    height: 60px;
-  }
-
-  .camera-icon {
-    width: 50px;
-    height: 50px;
+    font-size: 8px;
   }
 
   .camera-back-button {

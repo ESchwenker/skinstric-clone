@@ -5,7 +5,7 @@ import "./demographics.css";
 import Link from "next/link";
 
 export default function DemographicsPage() {
-    type DemographicData = {
+  type DemographicData = {
     race: string;
     age: string;
     gender: string;
@@ -272,23 +272,25 @@ export default function DemographicsPage() {
 
       {/* BOTTOM NAVIGATION */}
 
-      <div className="bottom-text">
-        If A.I. estimate is wrong, select the correct one.
+      <div className="bottom-controls">
+        <div className="bottom-text">
+          If A.I. estimate is wrong, select the correct one.
+        </div>
+
+        <Link href="/analysis/select" className="demographics-back-button">
+          <div className="demographics-diamond">
+            <div className="demographics-diamond-inner-left">◀</div>
+          </div>
+          <span>BACK</span>
+        </Link>
+
+        <a href="/" className="home-button">
+          <span>HOME</span>
+          <div className="home-diamond">
+            <div className="demographics-diamond-inner-right">▶</div>
+          </div>
+        </a>
       </div>
-
-      <Link href="/analysis/select" className="demographics-back-button">
-        <div className="demographics-diamond">
-          <div className="demographics-diamond-inner-left">◀</div>
-        </div>
-        <span>BACK</span>
-      </Link>
-
-      <a href="/" className="home-button">
-        <span>HOME</span>
-        <div className="home-diamond">
-          <div className="demographics-diamond-inner-right">▶</div>
-        </div>
-      </a>
     </main>
   );
 }

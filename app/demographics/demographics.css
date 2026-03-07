@@ -13,7 +13,7 @@
 .nav-left-bottom {
   position: absolute;
   left: 50px;
-  font-size: 16px;
+  font-size: 12px;
   font-weight: 500;
 }
 
@@ -38,7 +38,7 @@
 
 .analysis {
   display: block;
-  font-size: 16px;
+  font-size: 14px;
   margin-top: 30px;
   cursor: default;
 }
@@ -54,7 +54,7 @@
   color: white;
   border: none;
   padding: 14px 18px;
-  font-size: 12px;
+  font-size: 8px;
   font-weight: bold;
 }
 
@@ -66,13 +66,13 @@
 }
 
 .page-title {
-  font-size: 64px;
+  font-size: 58px;
   font-weight: 500;
   margin: 0;
 }
 
 .prediction {
-  font-size: 12px;
+  font-size: 10px;
 }
 
 /* MAIN */
@@ -92,7 +92,7 @@
 }
 
 h3 {
-    font-size: 14px;
+    font-size: 12px;
     text-transform: uppercase;
 }
 
@@ -131,18 +131,18 @@ h3 {
 }
 
 .center-title {
-  font-size: 32px;
+  font-size: 24px;
   margin-top: 0;
   text-transform: capitalize;
 }
 
 .circle-chart {
   position: relative;
-  width: 440px;
-  height: 440px;
+  width: 400px;
+  height: 400px;
   position: absolute;
-  right: 80px;
-  top: 50%;
+  right: 20px;
+  top: 55%;
   transform: translateY(-50%);
 }
 
@@ -151,7 +151,7 @@ h3 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 32px;
+  font-size: 24px;
 }
 
 .circle-chart svg {
@@ -196,19 +196,19 @@ h3 {
 
 .confidence-label {
     text-transform: capitalize;
-    font-size: 14px;
+    font-size: 12px;
 }
 
-/* BUTTONS */
+/* BOTTOM */ 
 
 .demographics-back-button {
   position: absolute;
-  bottom: 50px;
+  bottom: -150px;
   left: 50px;
   display: flex;
   align-items: center;
   gap: 20px;
-  font-size: 16px;
+  font-size: 14px;
   color: black;
   text-decoration: none;
 }
@@ -223,6 +223,7 @@ h3 {
   align-items: center;
   justify-content: center;
   transform: rotate(45deg);
+  transition: all 600ms ease;
 }
 
 .demographics-diamond-inner-left {
@@ -233,12 +234,12 @@ h3 {
 
 .home-button {
   position: absolute;
-  bottom: 50px;
+  bottom: -150px;
   right: 50px;
   display: flex;
   align-items: center;
   gap: 25px;
-  font-size: 16px;
+  font-size: 14px;
   color: black;
   text-decoration: none;
 }
@@ -253,6 +254,7 @@ h3 {
   align-items: center;
   justify-content: center;
   transform: rotate(-45deg);
+  transition: all 600ms ease;
 }
 
 .demographics-diamond-inner-right {
@@ -271,7 +273,7 @@ h3 {
 
 .bottom-text {
   position: absolute;
-  bottom: 20px;
+  bottom: -150px;
   left: 50%;
   transform: translateX(-50%);
   font-size: 14px;
@@ -356,6 +358,22 @@ h3 {
 
   .right-panel {
     max-height: 380px;
+  }
+
+    .bottom-controls {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    background: white;
+    z-index: 5;
+  }
+
+  .demographics-back-button,
+  .home-button,
+  .bottom-text {
+    z-index: 6;
   }
 
 }
@@ -490,6 +508,7 @@ h3 {
   .bottom-text {
     font-size: 12px;
     bottom: 80px;
+    text-align: center;
   }
 
 }

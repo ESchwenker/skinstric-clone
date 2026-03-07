@@ -109,8 +109,8 @@ export default function CameraPage() {
                 <Image
                   src="/camera.png"
                   alt="take picture"
-                  width={38}
-                  height={34}
+                  width={30}
+                  height={26}
                 />
               </div>
             </div>

@@ -35,7 +35,7 @@
   position: absolute;
   top: 40px;
   left: 50px;
-  font-size: 16px;
+  font-size: 12px;
   font-weight: 500;
 }
 
@@ -59,7 +59,7 @@
   color: white;
   border: none;
   padding: 14px 18px;
-  font-size: 12px;
+  font-size: 8px;
   font-weight: bold;
 }
 
@@ -79,8 +79,8 @@
 }
 
 .hero-title {
-  font-size: 128px;
-  line-height: 130px;
+  font-size: 97px;
+  line-height: 100px;
   font-weight: 400;
   letter-spacing: -0.04em;
   margin: 0;
@@ -135,18 +135,18 @@
   display: flex;
   align-items: center;
   gap: 20px;
-  font-size: 18px;
+  font-size: 14px;
   cursor: pointer;
   text-decoration: none;
   color: black;
 }
 
 .side-left {
-  left: 130px;
+  left: 100px;
 }
 
 .side-right {
-  right: 130px;
+  right: 100px;
 }
 
 .diamond {
@@ -179,10 +179,10 @@
   position: absolute;
   bottom: 60px;
   left: 20px;
-  max-width: 450px;
-  font-size: 18px;
+  max-width: 350px;
+  font-size: 14px;
   text-transform: uppercase;
-  line-height: 24px;
+  line-height: 20px;
 }
 
 /* Triangle Line Structure */
@@ -307,8 +307,8 @@
   }
 
   .hero-title {
-    font-size: 75px;
-    line-height: 75px;
+    font-size: 70px;
+    line-height: 70px;
   }
 
   .diamond {
@@ -326,7 +326,7 @@
     color: #888;
     text-transform: none;
     font-weight: 600;
-    font-size: 20px;
+    font-size: 18px;
     line-height: 1.8;
     z-index: 2;
     pointer-events: none;
@@ -356,8 +356,8 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 580px;
-  height: 580px;
+  width: 560px;
+  height: 560px;
   border: 1px solid #dcdcdc;
   transform: translate(-50%, -50%) rotate(45deg);
   z-index: 0;
