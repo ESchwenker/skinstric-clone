@@ -154,6 +154,11 @@ h3 {
   font-size: 32px;
 }
 
+.circle-chart svg {
+  width: 100%;
+  height: 100%;
+}
+
 .progress-ring {
   transition: stroke-dashoffset 0.8s ease;
 }
@@ -337,13 +342,16 @@ h3 {
   }
 
   .circle-chart {
-    width: 380px;
-    height: 380px;
-    right: 60px;
+    width: 340px;
+    height: 340px;
+    right: 20px;
   }
 
-  .circle-text {
-    font-size: 28px;
+   .circle-text {
+    font-size: 26px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
   .right-panel {
